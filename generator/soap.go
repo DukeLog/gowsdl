@@ -11,7 +11,6 @@ import (
 	"net/http"
 
 	"gopkg.in/inconshreveable/log15.v2"
-	"fmt"
 )
 
 var Log = log15.New()
@@ -122,7 +121,7 @@ func (s *SoapClient) Call(soapAction string, request, response interface{}) erro
 		Log.Warn("empty response")
 		return nil
 	}
-	fmt.Println(string(rawbody))
+
 	respEnvelope := &SoapEnvelope{}
 
 	err = xml.Unmarshal(rawbody, respEnvelope)

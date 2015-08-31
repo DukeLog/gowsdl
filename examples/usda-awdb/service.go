@@ -1005,11 +1005,11 @@ type AwdbWebService struct {
 	client *gowsdl.SoapClient
 }
 
-func NewAwdbWebService(url string, tls bool) *AwdbWebService {
+func NewAwdbWebService(url string, tls bool, auth *gowsdl.BasicAuth) *AwdbWebService {
 	if url == "" {
 		url = ""
 	}
-	client := gowsdl.NewSoapClient(url, tls)
+	client := gowsdl.NewSoapClient(url, tls, auth)
 
 	return &AwdbWebService{
 		client: client,

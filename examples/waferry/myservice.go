@@ -586,11 +586,11 @@ type WSF_x0020_ScheduleSoap struct {
 	client *gowsdl.SoapClient
 }
 
-func NewWSF_x0020_ScheduleSoap(url string, tls bool) *WSF_x0020_ScheduleSoap {
+func NewWSF_x0020_ScheduleSoap(url string, tls bool, auth *gowsdl.BasicAuth) *WSF_x0020_ScheduleSoap {
 	if url == "" {
 		url = "http://b2b.wsdot.wa.gov/ferries/schedule/Default.asmx"
 	}
-	client := gowsdl.NewSoapClient(url, tls)
+	client := gowsdl.NewSoapClient(url, tls, auth)
 
 	return &WSF_x0020_ScheduleSoap{
 		client: client,
@@ -854,11 +854,11 @@ type WSF_x0020_ScheduleHttpGet struct {
 	client *gowsdl.SoapClient
 }
 
-func NewWSF_x0020_ScheduleHttpGet(url string, tls bool) *WSF_x0020_ScheduleHttpGet {
+func NewWSF_x0020_ScheduleHttpGet(url string, tls bool,  auth *gowsdl.BasicAuth) *WSF_x0020_ScheduleHttpGet {
 	if url == "" {
 		url = "http://b2b.wsdot.wa.gov/ferries/schedule/Default.asmx"
 	}
-	client := gowsdl.NewSoapClient(url, tls)
+	client := gowsdl.NewSoapClient(url, tls, auth)
 
 	return &WSF_x0020_ScheduleHttpGet{
 		client: client,
@@ -869,11 +869,11 @@ type WSF_x0020_ScheduleHttpPost struct {
 	client *gowsdl.SoapClient
 }
 
-func NewWSF_x0020_ScheduleHttpPost(url string, tls bool) *WSF_x0020_ScheduleHttpPost {
+func NewWSF_x0020_ScheduleHttpPost(url string, tls bool,  auth *gowsdl.BasicAuth) *WSF_x0020_ScheduleHttpPost {
 	if url == "" {
 		url = "http://b2b.wsdot.wa.gov/ferries/schedule/Default.asmx"
 	}
-	client := gowsdl.NewSoapClient(url, tls)
+	client := gowsdl.NewSoapClient(url, tls, auth)
 
 	return &WSF_x0020_ScheduleHttpPost{
 		client: client,

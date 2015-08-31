@@ -34114,11 +34114,11 @@ type VimPortType struct {
 	client *gowsdl.SoapClient
 }
 
-func NewVimPortType(url string, tls bool) *VimPortType {
+func NewVimPortType(url string, tls bool, auth *gowsdl.BasicAuth) *VimPortType {
 	if url == "" {
 		url = ""
 	}
-	client := gowsdl.NewSoapClient(url, tls)
+	client := gowsdl.NewSoapClient(url, tls, auth)
 
 	return &VimPortType{
 		client: client,

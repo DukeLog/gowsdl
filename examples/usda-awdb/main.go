@@ -11,7 +11,7 @@ import (
 func main() {
 	gowsdl.Log.SetHandler(log15.StreamHandler(os.Stdout, log15.TerminalFormat()))
 
-	service := NewAwdbWebService("http://www.wcc.nrcs.usda.gov/awdbWebService/services", false)
+	service := NewAwdbWebService("http://www.wcc.nrcs.usda.gov/awdbWebService/services", false, nil)
 	amIthere, err := service.AreYouThere(&areYouThere{})
 	if err != nil {
 		panic(err)
